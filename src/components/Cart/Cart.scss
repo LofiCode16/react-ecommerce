@@ -71,18 +71,89 @@
     }
 
     &__products{
-        display: flex;
-        justify-content: space-between;
-        height: calc(100vh - 70px - 120px);
+        height: calc(100vh - 76px - 119px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 
-        > div{
-            &:first-of-type{
-                
-                img{
-                    width: 100px;
+
+    &__product{
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #4f5256;
+
+        img{
+            width: 100px;
+            margin-right: 10px;
+        }
+
+        &-info{
+            color: white !important;
+            width: 100%;
+
+            h3{
+                font-size: 18px;
+            }
+
+            p{
+                font-size: 16px;
+            }
+
+            > div{
+                &:first-of-type{
+                    border-bottom: 1px solid #4f5256;
                 }
 
+                &:last-of-type{
+                    margin-top: 15px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    p{
+                        margin: 0;
+                    }
+
+                    button{
+                        background-color: #0098d3;
+                        border-color: #0098d3;
+                        color: white;
+                        border-radius: 5px;
+                        margin: 0 5px;
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
             }
+        }
+    }   
+    
+    &__footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #4f5256;
+        padding: 15px;
+
+        > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+
+            p {
+                &:last-of-type{
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        button{
+            background-color: #0098d3;
+            width: 100%;
+            border: 0;
         }
     }
 }
