@@ -5,6 +5,8 @@ import useFetch from './hooks/useFetch';
 import { URL_API_PRODUCTS, STORAGE_PRODUCTS_CART } from './utils/constants';
 import Products from './components/Products';
 
+import './App.scss';
+
 
 function App() {
 
@@ -38,7 +40,7 @@ function App() {
   }
   
   return (
-    <div>
+    <div className="app">
       <TopMenu productsCart={productsCart} getProductsCart={getProductsCart} products={products} />      
       <Products products={products} addProductCart={addProductCart} />
       <ToastContainer 

@@ -14,6 +14,7 @@ export default function TopMenu(props){
         bg="dark" 
         variant="dark" 
         className="top-menu"
+        fixed="top"
       >
         <Container>
             <BrandNav />

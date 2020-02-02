@@ -22,6 +22,35 @@ export default function Cart(props){
         setSingleProductsCart(allProductsId);
     }, [productsCart]);
 
+    useEffect(() => {
+        const productData = [];
+        let totalPrice = 0;
+        const allProductsId = removeArrayDuplicates(productsCart);
+
+        allProductsId.forEach(productId => {
+            const quantity = countDuplicatesItemArray(productId, productsCart);
+            const productValue = {
+                id: productId,
+                quantity: quantity
+            };
+
+            productData.push(productValue);
+        });
+
+        if(!products.loading && products.result){
+            products.result.forEach(product => {
+                productData.forEach(item => {
+                    if(product.id == item.id){
+                        const totalValue = product.price * item.quantity;
+                        totalPrice = totalPrice + totalValue;
+                    }
+                })
+            })
+        }
+
+        setCartTotalPrice(totalPrice);
+    }, [productsCart, products])
+
     const openCart = () => {
         setCartOpen(true);
         document.body.style.overflow = "hidden";
