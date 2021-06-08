@@ -167,7 +167,7 @@ function RenderProduct(props){
 
     return(
         <div className="cart-content__product">            
-            <img src={`${BASE_PATH}/${product.image}`} alt={product.name} />            
+            <img src={`${product.image}`} alt={product.name} />            
             <div className="cart-content__product-info">
                 <div>
                     <h3>{product.name.substr(0, 25)}</h3>
