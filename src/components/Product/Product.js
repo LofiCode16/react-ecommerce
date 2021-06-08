@@ -20,7 +20,7 @@ export default function Product(props){
                         {product.extraInfo}
                     </Card.Text>
                     <Card.Text>
-                        USD ${product.price.toFixed(2)}
+                        CLP ${product.price.toFixed(0)}
                     </Card.Text>
                     <Button onClick={()=>addProductCart(product.id, product.name)}>Agregar</Button>
                 </Card.Body>
